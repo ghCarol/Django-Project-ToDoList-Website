@@ -76,7 +76,7 @@ $('.controller_add').click(function () {
 });
 
 //已完成任务
-$('#list_items').on("click",".item_checker",function () {
+$('#list_items').on("click",".ist_checkbox",function () {
 let item_checked_id = $(this).find('input').attr("id");
    let len = item_checked_id.length;
    let id = item_checked_id.substring(13,len);
@@ -84,6 +84,17 @@ let item_checked_id = $(this).find('input').attr("id");
 
    $.post("/toDoList/",{"finished_id":id}, function(){
         $("#"+item_id).hide();
+    });
+
+});
+$('#list_items').on("click",".delete",function () {
+let item_delete_id = $(this).attr("id");
+   let len = item_delete_id.length;
+   let id = item_delete_id.substring(12,len);
+   let item_id = "item_" + id;
+
+   $.post("/toDoList/",{"delete_id":id}, function(){
+        $("#"+item_id).remove();
     });
 
 });

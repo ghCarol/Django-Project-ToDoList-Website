@@ -16,7 +16,7 @@
             <h2 class="list_header">
                 <span>待办清单</span>
                 <div class="right_actions">
-                    <a href="#" class="action action_menu"><span class="icon glyphicon glyphicon-menu-hamburger"></a>
+                    <a href="#" class="action action_menu"><span class="icon glyphicon glyphicon-menu-hamburger"></span></a>
                 </div>
             </h2>
             <ul class="list_items" id="list_items">
@@ -26,12 +26,21 @@
                             <tbody>
                             <tr>
                                 <td class="item_checker">
-                                    <div class="ist_checkbox"><input type="checkbox" name="finished" id="item_checked_{{ task.id }}"/><label for="item_checked_{{ task.id }}"></label></label></div>
+                                    <div class="ist_checkbox">
+                                        <input type="checkbox" name="finished" id="item_checked_{{ task.id }}"/></div>
                                 </td>
                                 <td class="item_content">
                                     <span class="text">{{ task.content }}</span>
                                 </td>
-                                <td class="menu"><span class="icon glyphicon glyphicon-option-vertical"></span></td>
+                                <td class="menu dropdown">
+                                    <div class="">
+                                    <span class="icon glyphicon glyphicon-option-vertical" data-toggle="dropdown">
+                                    </span>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#" class="delete" id="item_delete_{{ task.id }}">删除任务</a></li>
+                                    </ul>
+                                    </div>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -48,7 +57,8 @@
                                         <tr>
                                             <td class="new_task_content">
                                                 <span class="new_text_placeholder">例如： 学习Python</span>
-                                                <div class="new_text" autofocus="autofocus" contenteditable="true"></div>
+                                                <div class="new_text" autofocus="autofocus"
+                                                     contenteditable="true"></div>
                                             </td>
                                             <td class="menu"></td>
                                         </tr>
@@ -83,6 +93,7 @@
     </div>
 </div>
 <script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <script src="/static/js/my_js.js"></script>
 </body>
 
