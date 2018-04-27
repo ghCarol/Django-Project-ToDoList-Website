@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 """mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -19,4 +20,5 @@ from toDoList import views
 urlpatterns = [
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^index/', views.index),
+    url(r'^toDoList/', views.toDoList),
 ]

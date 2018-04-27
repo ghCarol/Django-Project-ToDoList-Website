@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/my_css.css" rel="stylesheet">
+</head>
+
+<body>
+<div style="width: 596px; margin: auto; padding: 30px 20px 0 20px">
+    <div class="main_module">
+        <div class="undo_tasks">
+            <h2 class="list_header">
+                <span>待办清单</span>
+                <div class="right_actions">
+                    <a href="#" class="action action_menu"><span class="icon glyphicon glyphicon-menu-hamburger"></a>
+                </div>
+            </h2>
+            <ul class="list_items" id="list_items">
+                {% for task in unfinished_list %}
+                    <li class="item item_{{ task.id }}" id="item_{{ task.id }}">
+                        <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td class="item_checker">
+                                    <div class="ist_checkbox"><input type="checkbox" name="finished"/></div>
+                                </td>
+                                <td class="item_content">
+                                    <span class="text">{{ task.content }}</span>
+                                </td>
+                                <td class="menu"><span class="icon glyphicon glyphicon-option-vertical"></span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                {% endfor %}
+                <li class="details">
+                    <form>
+                        <table width="100%">
+                            <tbody>
+                            <tr>
+                                <td colspan="2" class="form_content">
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td class="new_task_content">
+                                                <span class="new_text_placeholder">例如： 学习Python</span>
+                                                <div class="new_text" autofocus="autofocus" contenteditable="true"></div>
+                                            </td>
+                                            <td class="menu"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="new_task_submit_table">
+                            <tbody>
+                            <tr>
+                                <td align="left" class="td_submit">
+                                    <a href="#" class="ist_btn btn_red submit_btn">
+                                        <span>添加任务</span>
+                                    </a>
+                                    <a class="cancel" href="#">取消</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="controller controller_add">
+            <a href="#" class="action action_add_item"><span class="icon glyphicon glyphicon-plus"></span>添加任务</a>
+        </div>
+        <div class="finished">
+            <ul class="list_items"></ul>
+        </div>
+    </div>
+</div>
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/js/my_js.js"></script>
+</body>
+
+</html>

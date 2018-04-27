@@ -1,0 +1,19 @@
+<ul class="list_items" id="list_items">
+                {% for task in unfinished_list %}
+                    <li class="item item_{{ task.id }}" id="item_{{ task.id }}">
+                        <table cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td class="item_checker">
+                                    <div class="ist_checkbox"><input type="checkbox" name="finished"/></div>
+                                </td>
+                                <td class="item_content">
+                                    <span class="text">{{ task.content }}</span>
+                                </td>
+                                <td class="menu"><span class="icon glyphicon glyphicon-option-vertical"></span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                {% endfor %}
+</ul>
