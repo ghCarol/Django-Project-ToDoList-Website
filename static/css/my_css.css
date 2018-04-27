@@ -7,7 +7,68 @@ body {
     /*background-size: cover;*/
 }
 
+/*checkbox效果*/
+.checkbox input[type='checkbox'] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+}
 
+.checkbox label {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    height: 20px;
+    line-height: 20px;
+}
+
+.checkbox label:before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+}
+
+.checkbox label:after {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: 0;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+}
+
+.checkbox input[type='checkbox']:checked + label:before {
+    background: #4cd764;
+    border-color: #4cd764;
+}
+
+.checkbox input[type='checkbox']:checked + label:after {
+    background: #4cd764;
+}
+
+/*-------------------------*/
 
 .list_items li {
     font-size: 14px;
@@ -185,7 +246,7 @@ a.action_add_item .icon, a.action_add_item .icon:hover {
 .btn_red:hover, .btn_red:visited:hover {
     border-color: #b0281a;
     background-color: #c53727;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .submit_btn {
@@ -202,6 +263,6 @@ a.action_add_item .icon, a.action_add_item .icon:hover {
     white-space: nowrap
 }
 
-.cancel:hover{
+.cancel:hover {
     color: #555;
 }

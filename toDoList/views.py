@@ -26,14 +26,22 @@ def index(request):
 
 @csrf_exempt
 def toDoList(request):
-    # request.POST
-    # request.GET
-
+    #添加任务
     new_content = request.POST.get("new_content", None)
     if new_content is not None:
         task = ToDoListModel.objects.create(content=new_content, finished=0)  # todo controller收到传值
         resp = {"id": task.id, "content": task.content, "finished": task.finished}
         return HttpResponse(json.dumps(resp), content_type="application/json")
+
+    #标记已完成的任务
+    set_finished_task_id = request.POST.get("finished_id", None)
+    if set_finished_task_id is not None:
+        task = ToDoListModel.objects.get(id=set_finished_task_id)
+        task.finished = 1
+        task.save()
+        return HttpResponse()
+
+    #界面展示
     to_do_list = ToDoListModel.objects.all()
     unfinished_tasks = []
     finished_tasks = []

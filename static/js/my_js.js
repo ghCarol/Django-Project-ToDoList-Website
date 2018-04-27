@@ -75,7 +75,16 @@ $('.controller_add').click(function () {
     details.find(".new_text").focus();
 });
 
-//删除任务
-$('.item_checker').click(function () {
-   $('.item_checker').parent()
+//已完成任务
+$('#list_items').on("click",".item_checker",function () {
+let item_checked_id = $(this).find('input').attr("id");
+   let len = item_checked_id.length;
+   let id = item_checked_id.substring(13,len);
+   let item_id = "item_" + id;
+
+   $.post("/toDoList/",{"finished_id":id}, function(){
+        $("#"+item_id).hide();
+    });
+
 });
+
