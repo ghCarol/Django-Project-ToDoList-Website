@@ -1,3 +1,4 @@
+//添加任务
 $('#list_items').on("mouseover",".item",function(){
 $('.item').mouseover(function(){
     $(this).find('.menu').css("visibility","visible");
@@ -41,21 +42,21 @@ $('.td_submit').find('.ist_btn').click(function () {
 //
 let build_list_item = function(task){
     if (task){
-        let new_item_HTMLDoc = "<li class=\"item item_"+ task.id +"\" id=\"item_"+ task.id +"\">\n" +
-            "                        <table cellpadding=\"0\" cellspacing=\"0\">\n" +
-            "                            <tbody>\n" +
-            "                            <tr>\n" +
-            "                                <td class=\"item_checker\">\n" +
-            "                                    <div class=\"ist_checkbox\"><input type=\"checkbox\" name=\"finished\"/></div>\n" +
-            "                                </td>\n" +
-            "                                <td class=\"item_content\">\n" +
-            "                                    <span class=\"text\">"+ task.content +"</span>\n" +
-            "                                </td>\n" +
-            "                                <td class=\"menu\"><span class=\"icon glyphicon glyphicon-option-vertical\"></span></td>\n" +
-            "                            </tr>\n" +
-            "                            </tbody>\n" +
-            "                        </table>\n" +
-            "                    </li>" ;
+        let new_item_HTMLDoc = '<li class=\"item item_'+ task.id +'\" id=\"item_'+ task.id +'\">\n' +
+            '                        <table cellpadding=\"0\" cellspacing=\"0\">\n' +
+            '                            <tbody>\n' +
+            '                            <tr>\n' +
+            '                                <td class=\"item_checker\">\n' +
+            '                                    <div class=\"ist_checkbox\"><input type=\"checkbox\" name=\"finished\" id=\"item_checked_'+ task.id +'\"/></div>\n' +
+            '                                </td>\n' +
+            '                                <td class=\"item_content\">\n' +
+            '                                    <span class=\"text\">'+ task.content +'</span>\n' +
+            '                                </td>\n' +
+            '                                <td class=\"menu\"><span class=\"icon glyphicon glyphicon-option-vertical\"></span></td>\n' +
+            '                            </tr>\n' +
+            '                            </tbody>\n' +
+            '                        </table>\n' +
+            '                    </li>' ;
         // var firstItem = $("#list_items").children(":first");
         // $(new_item_HTMLDoc).insertBefore(firstItem);
         //$('#list_items').append(new_item_HTMLDoc);
@@ -72,4 +73,9 @@ $('.controller_add').click(function () {
     let details = $('.details');
     details.show();
     details.find(".new_text").focus();
+});
+
+//删除任务
+$('.item_checker').click(function () {
+   $('.item_checker').parent()
 });
