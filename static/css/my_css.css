@@ -44,13 +44,6 @@ a.action_menu {
     padding-right: 15px;
 }
 
-.menu {
-    font-size: 15px;
-    visibility: hidden;
-    margin-left: 3px;
-    text-align: right;
-    opacity: 0.3;
-}
 
 .ist_checkbox {
     width: 14px;
@@ -69,10 +62,6 @@ td, th {
     display: table-cell;
 }
 
-.menu:hover, .action_menu:hover {
-    opacity: 1;
-    cursor: pointer;
-}
 
 a.action_add_item .icon, a.action_add_item .icon:hover {
     font-size: 12px;
@@ -100,7 +89,7 @@ a.action_add_item .icon, a.action_add_item .icon:hover {
     list-style: none;
 }
 
-.item td {
+.item td   {
     padding-top: 13px;
     padding-bottom: 13px;
 }
@@ -120,10 +109,23 @@ a.action_add_item .icon, a.action_add_item .icon:hover {
     cursor: pointer;
 }
 
-/*添加任务*/
-.details {
-    list-style: none;
-    display: none;
+.item .menu{
+    font-size: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    visibility: hidden;
+    margin-left: 3px;
+    text-align: right;
+    opacity: 0.3;
+}
+.menu:hover, .action_menu:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.menu_icon{
+    padding-top: 13px;
+    padding-bottom: 13px;
+    top: 0;
 }
 
 .form_content {
@@ -203,4 +205,13 @@ a.action_add_item .icon, a.action_add_item .icon:hover {
 
 .cancel:hover {
     color: #555;
+}
+
+.dropdown-menu{
+    margin-top: -1px;
+}
+/*添加任务*/
+.details {
+    list-style: none;
+    display: none;
 }

@@ -29,9 +29,18 @@ def toDoList(request):
     # 添加任务
     new_content = request.POST.get("new_content", None)
     if new_content is not None:
-        task = ToDoListModel.objects.create(content=new_content, finished=0)  # todo controller收到传值
+        task = ToDoListModel.objects.create(content=new_content, finished=0)
         resp = {"id": task.id, "content": task.content, "finished": task.finished}
         return HttpResponse(json.dumps(resp), content_type="application/json")
+
+    # 修改任务
+    modified_id = request.POST.get("modified_id", None)
+    modified_content = request.POST.get("modified_content", None)
+    if modified_id is not None and modified_content is not None:
+        task = ToDoListModel.objects.get(id=modified_id)
+        task.content = modified_content
+        task.save()
+        return HttpResponse()
 
     # 标记已完成的任务
     set_finished_task_id = request.POST.get("finished_id", None)
@@ -58,5 +67,3 @@ def toDoList(request):
         elif task.finished == 1:
             finished_tasks.append(task)
     return render(request, "toDoList.html", {"unfinished_list": unfinished_tasks, "finished_list": finished_tasks})
-
-

@@ -33,20 +33,18 @@
                                     <span class="text">{{ task.content }}</span>
                                 </td>
                                 <td class="menu dropdown">
-                                    <div class="">
-                                    <span class="icon glyphicon glyphicon-option-vertical" data-toggle="dropdown">
+                                    <span class="icon glyphicon glyphicon-option-vertical menu_icon" data-toggle="dropdown">
                                     </span>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li><a href="#" class="delete" id="item_delete_{{ task.id }}">删除任务</a></li>
                                     </ul>
-                                    </div>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
                     </li>
                 {% endfor %}
-                <li class="details">
+                <li class="details" id="details">
                     <form>
                         <table width="100%">
                             <tbody>
@@ -57,10 +55,8 @@
                                         <tr>
                                             <td class="new_task_content">
                                                 <span class="new_text_placeholder">例如： 学习Python</span>
-                                                <div class="new_text" autofocus="autofocus"
-                                                     contenteditable="true"></div>
+                                                <div class="new_text" autofocus="autofocus" contenteditable="true"></div>
                                             </td>
-                                            <td class="menu"></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -74,6 +70,39 @@
                                 <td align="left" class="td_submit">
                                     <a href="#" class="ist_btn btn_red submit_btn">
                                         <span>添加任务</span>
+                                    </a>
+                                    <a class="cancel" href="#">取消</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </li>
+                <li class="details editor">
+                    <form>
+                        <table width="100%">
+                            <tbody>
+                            <tr>
+                                <td colspan="2" class="form_content">
+                                    <table>
+                                        <tbody>
+                                        <tr>
+                                            <td class="new_task_content">
+                                                <div class="new_text" autofocus="autofocus" contenteditable="true"></div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="new_task_submit_table">
+                            <tbody>
+                            <tr>
+                                <td align="left" class="td_submit">
+                                    <a href="#" class="ist_btn btn_red submit_btn">
+                                        <span>保存</span>
                                     </a>
                                     <a class="cancel" href="#">取消</a>
                                 </td>
