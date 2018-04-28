@@ -52,7 +52,15 @@ let build_list_item = function(task){
             '                                <td class=\"item_content\">\n' +
             '                                    <span class=\"text\">'+ task.content +'</span>\n' +
             '                                </td>\n' +
-            '                                <td class=\"menu\"><span class=\"icon glyphicon glyphicon-option-vertical\"></span></td>\n' +
+            '                                <td class="menu dropdown">\n' +
+            '                                    <div class="">\n' +
+            '                                    <span class="icon glyphicon glyphicon-option-vertical" data-toggle="dropdown">\n' +
+            '                                    </span>\n' +
+            '                                    <ul class="dropdown-menu dropdown-menu-right">\n' +
+            '                                        <li><a href="#" class="delete" id="item_delete_'+ task.id +'">删除任务</a></li>\n' +
+            '                                    </ul>\n' +
+            '                                    </div>\n' +
+            '                                </td>\n' +
             '                            </tr>\n' +
             '                            </tbody>\n' +
             '                        </table>\n' +

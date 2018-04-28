@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edc3ed53-8270-47ad-8b7a-bdaa279173ae" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/static/css/my_css.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/my_css.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/my_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/my_js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/toDoList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/toDoList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/toDoList/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/toDoList/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/toDoList/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+            <state relative-caret-position="273">
+              <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
               <folding>
                 <element signature="e#24#59#0" expanded="true" />
               </folding>
@@ -67,8 +64,8 @@
       <file leaf-file-name="toDoList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/toDoList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="39" column="88" selection-start-line="39" selection-start-column="88" selection-end-line="39" selection-end-column="88" />
+            <state relative-caret-position="303">
+              <caret line="42" column="37" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="42" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -85,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my_js.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="my_js.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/my_js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="206">
+              <caret line="57" column="61" lean-forward="true" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
               <folding>
                 <element signature="e#849#866#0" />
                 <element signature="e#2616#2926#0" />
@@ -149,8 +146,8 @@
         <option value="$PROJECT_DIR$/templates/list.html" />
         <option value="$PROJECT_DIR$/static/css/my_css.css" />
         <option value="$PROJECT_DIR$/templates/toDoList.html" />
-        <option value="$PROJECT_DIR$/static/js/my_js.js" />
         <option value="$PROJECT_DIR$/toDoList/views.py" />
+        <option value="$PROJECT_DIR$/static/js/my_js.js" />
       </list>
     </option>
   </component>
@@ -518,23 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/my_css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/toDoList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="39" column="88" selection-start-line="39" selection-start-column="88" selection-end-line="39" selection-end-column="88" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/toDoList/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -545,24 +525,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/my_js.js">
+    <entry file="file://$PROJECT_DIR$/static/css/my_css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="166">
+          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/toDoList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="42" column="37" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="42" selection-end-column="37" />
           <folding>
-            <element signature="e#849#866#0" />
-            <element signature="e#2616#2926#0" />
-            <element signature="e#2687#2695#0" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/toDoList/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        <state relative-caret-position="273">
+          <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
           <folding>
             <element signature="e#24#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/my_js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="57" column="61" lean-forward="true" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
+          <folding>
+            <element signature="e#849#866#0" />
+            <element signature="e#2616#2926#0" />
+            <element signature="e#2687#2695#0" />
           </folding>
         </state>
       </provider>
