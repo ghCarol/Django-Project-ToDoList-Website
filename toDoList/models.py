@@ -4,11 +4,11 @@
 from django.db import models
 
 
-class Task(models.Model):  # todo 数据库中的ToDoListModel表
+class Task(models.Model):
     id = models.AutoField(primary_key=True)
     content = models.TextField(null=True)
-    finished = models.BooleanField(default='0')
+    finished = models.BooleanField(default='False')  # 原来是='0'
 
     # 改名
     class Meta():
-         db_table = 'Task'
+        db_table = 'Task'

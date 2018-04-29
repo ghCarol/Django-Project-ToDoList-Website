@@ -1,32 +1,28 @@
 # -*- coding: UTF-8 -*-
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
-import json
-from models import Task
-# from rest_framework import viewsets
-# from serializers import TaskSerializer
 from django.views.decorators.csrf import csrf_exempt
 
+from models import Task
+from serializers import TaskSerializer
 
-# Create your views here.
+import json
 
-# @csrf_exempt
-# def index(request):
-#     # request.POST
-#     # request.GET
-#     # return HttpResponse("Hello")
-#     if request.method == "POST":
-#         username = request.POST.get("username", None)
-#         password = request.POST.get("password", None)
-#         # temp = {"user": username, "pwd": password}
-#         # user_list.append(temp)
-#         models.UserInfo.objects.create(user=username, pwd=password)
-#     user_list = models.UserInfo.objects.all()
-#     return render(request, "index.html", {"data": user_list})
+from rest_framework import viewsets
+
+from rest_framework import status
+from rest_framework.views import APIView
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import generics
+from rest_framework import renderers
+from rest_framework import reverse
+from django.http import Http404
+
 
 # 未用rest framework
 @csrf_exempt
-def toDoList(request):
+def to_do_list(request):
     # 添加任务
     new_content = request.POST.get("new_content", None)
     if new_content is not None:
@@ -70,10 +66,68 @@ def toDoList(request):
     return render(request, "toDoList.html", {"unfinished_list": unfinished_tasks, "finished_list": finished_tasks})
 
 
-# # 使用rest framework
+# 使用rest framework
+
+class Tasklist(generics.ListCreateAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+
+    # def get(self, request, format=None):
+    #     tasks = Task.objects.all()
+    #     serializer = TaskSerializer(tasks, many=True)
+    #     return Response(serializer.data)
+    #
+    # def post(self, request, format=None):
+    #     serializer = TaskSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    读取, 更新 或 删除 一个task实例.
+    """
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    # def get_object(self, id):
+    #     try:
+    #         return Task.objects.get(id=id)
+    #     except Task.DoesNotExist:
+    #         raise Http404
+    #
+    # def get(self, request, pk_id, format=None):
+    #     task = self.get_object(pk_id)
+    #     serializer = TaskSerializer(task)
+    #     return Response(serializer.data)
+    #
+    # def put(self, request, pk_id, format=None):
+    #     task = self.get_object(pk_id)
+    #     serializer = TaskSerializer(task, data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #
+    # def delete(self, request, pk_id, format=None):
+    #     task = self.get_object(pk_id)
+    #     task.delete()
+    #     return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+# # API视图
 # class TaskViewSet(viewsets.ModelViewSet):
 #     """
 #     API endpoint that allows groups to be viewed or edited.
 #     """
 #     queryset = Task.objects.all()
 #     serializer_class = TaskSerializer
+
+class TaskContent(generics.GenericAPIView):
+    queryset = Task.objects.all()
+    renderer_classes = (renderers.StaticHTMLRenderer,)
+
+    def get(self, request, *args, **kwargs):
+        task = self.get_object()
+        return Response(task.content)
